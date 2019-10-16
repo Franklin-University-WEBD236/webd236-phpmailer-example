@@ -58,7 +58,6 @@ function get_delete($id) {
 }
 function get_view($id) {
   $transactions = findTransactionsByID($id);
-  print_r($transactions);
   renderTemplate(
     "views/cache_transaction_view.php",
     array(
