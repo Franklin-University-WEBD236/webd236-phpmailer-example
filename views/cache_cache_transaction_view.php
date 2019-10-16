@@ -82,7 +82,7 @@
 
 <div class="row">
   <div class="col-lg-12">
-      <?php echo({ $transaction['message'] ); ?>}
+      <?php echo( nl2br(htmlentities($transaction['message'])) ); ?>
   </div>
 </div>
     
