@@ -27,5 +27,20 @@ function get_send() {
     )
   );
 }
+function post_send() {
+  echo "<pre>";
+  print_r($_POST);
+  echo "</pre>";
+  foreach ($_POST as $key => $value) {
+      $errors[] = array($key.' may not be empty');
+  }
+  renderTemplate(
+    "views/cache_transaction_add.php",
+    array(
+      'title' => 'My Transactions',
+      'errors' => $errors
+    )
+  );
+}
 
 ?>

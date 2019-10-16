@@ -67,23 +67,23 @@
     <form action="/transaction/send" method="post">
       <div class="form-group">
         <label for="amount">Amount</label>
-        <input type="number" min="1" id="amount" name="amount" class="form-control" placeholder="How much do you want to send?" value="" required/>
+        <input type="number" min="1" id="amount" name="amount" class="form-control" placeholder="How much do you want to send?" value="" />
       </div>
       <div class="form-group">
         <label for="title">Subject</label>
-        <input type="text" min="1" id="subject" name="subject" class="form-control" placeholder="Why are you sending money?" value="" required/>
+        <input type="text" min="1" id="subject" name="subject" class="form-control" placeholder="Why are you sending money?" value="" />
       </div>
       <div class="form-group">
         <label for="content">Message</label>
-        <textarea class="form-control" id="message" name="message" placeholder="Say thank you, or some other note." rows="12" required></textarea>
+        <textarea class="form-control" id="message" name="message" placeholder="Say thank you, or some other note." rows="12"></textarea>
       </div>
       <div class="form-group">
         <label for="tags">From</label>
-        <input type="text" min="1" id="sender" name="sender" class="form-control" placeholder="Enter email from" value="" required/>
+        <input type="text" min="1" id="sender" name="sender" class="form-control" placeholder="Enter email from" value="" />
       </div>
       <div class="form-group">
         <label for="tags">To</label>
-        <input type="text" min="1" id="receiver" name="receiver" class="form-control" placeholder="Enter email to" value="" required />
+        <input type="text" min="1" id="receiver" name="receiver" class="form-control" placeholder="Enter email to" value="" />
       </div>
       <div class="form-group">
         <div class="btn-toolbar align-middle">
