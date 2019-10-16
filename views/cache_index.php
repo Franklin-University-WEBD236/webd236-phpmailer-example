@@ -65,7 +65,18 @@
 <div class="row">
   <div class="col-lg-12">
     <span class='h4'>Transactions</span> <span class='float-right h3'>Balance: $0.00</span></span>
-      <p><br/>Something should go here...</p>
+
+    <?php  if (isset($transactions)): ?>
+    <div class="row">
+      <div class="col-lg-12">
+          <ul class="mb-0">
+    <?php  foreach ($transactions as $transaction): ?>
+            <li><?php echo(htmlentities($transaction)); ?></li>
+    <?php  endforeach; ?>
+          </ul>
+      </div>
+    </div>
+    <?php  endif;?>
   </div>
 </div>
 

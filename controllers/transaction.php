@@ -31,21 +31,13 @@ function get_send() {
   );
 }
 function post_send() {
-  $transactions = findAllTransactions();
-  echo "<pre>";
-  print_r($transactions);
-  echo "</pre>";
-
-  
-
-  $errors = array();
   foreach ($_POST as $key => $value) {
     if(empty($value)) {
       $errors[] = $key.' may not be empty';
     }
   }
   if(empty($errors)) {
-    echo inserTransaction($_POST['amount'], $_POST['subject'], $_POST['message'], $_POST['sender'], $_POST['receiver'], $_POST['date']);
+    inserTransaction($_POST['amount'], $_POST['subject'], $_POST['message'], $_POST['sender'], $_POST['receiver'], $_POST['date']);
 
     renderTemplate(
       "views/cache_transaction_add.php",

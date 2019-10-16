@@ -3,7 +3,18 @@
 <div class="row">
   <div class="col-lg-12">
     <span class='h4'>Transactions</span> <span class='float-right h3'>Balance: $0.00</span></span>
-      <p><br/>Something should go here...</p>
+
+    [[ if (isset($transactions)): ]]
+    <div class="row">
+      <div class="col-lg-12">
+          <ul class="mb-0">
+    [[ foreach ($transactions as $transaction): ]]
+            <li>{{$transaction}}</li>
+    [[ endforeach; ]]
+          </ul>
+      </div>
+    </div>
+    [[ endif;]]
   </div>
 </div>
 
