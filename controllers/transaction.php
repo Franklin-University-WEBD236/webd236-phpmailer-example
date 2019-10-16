@@ -20,7 +20,7 @@ function get_list() {
   );
 }
 function get_send() {
-  $transactions = findAllTransactions();
+  $transactions = adHocQuery();
   $balance = 0;
   if(!empty($transactions)){
     foreach($transactions as $t){

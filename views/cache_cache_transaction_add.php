@@ -64,8 +64,8 @@
 
 <div class="row">
   <div class="col-lg-12">
-
-    <form action="/transaction/<?php echo(htmlentities($operation)); ?>" method="post">
+<?php echo(htmlentities($operation)); ?>
+    <form action="/transaction/<?php echo(htmlentities( (htmlentities($operation)) )); ?>" method="post">
       <div class="form-group">
         <label for="amount">Amount</label>
         <input type="number" min="1" id="amount" name="amount" class="form-control" placeholder="How much do you want to send?" value="<?php echo(htmlentities($transaction['amount'])); ?>" />
@@ -76,7 +76,7 @@
       </div>
       <div class="form-group">
         <label for="content">Message</label>
-        <textarea class="form-control" id="message" name="message" placeholder="Say thank you, or some other note." rows="12"><?php echo(htmlentities($transaction['message'])); ?></textarea>
+        <textarea class="form-control" id="message" name="message" placeholder="Say thank you, or some other note." rows="12"><?php echo(htmlentities( (htmlentities($transaction['message'])) )); ?></textarea>
       </div>
       <div class="form-group">
         <label for="tags">From</label>
@@ -98,10 +98,11 @@
 </div>
 
     </div>
+    </div>
     <footer class="footer">
       <div class="container">
         <span class="text-muted">WEBD 236 examples copyright &copy; 2019 <a href="https://www.franklin.edu/">Franklin University</a>. Current time is <?php echo(htmlentities(date('Y-m-d H:i:s T'))); ?></span>
       </div>
     </footer>
   </body>
-</html>
+</html> 
