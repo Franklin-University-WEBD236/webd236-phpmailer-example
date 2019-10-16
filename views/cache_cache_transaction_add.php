@@ -64,27 +64,26 @@
 
 <div class="row">
   <div class="col-lg-12">
-<?php echo(htmlentities($operation)); ?>
-    <form action="/transaction/<?php echo(htmlentities( (htmlentities($operation)) )); ?>" method="post">
+    <form action="/transaction/send" method="post">
       <div class="form-group">
         <label for="amount">Amount</label>
-        <input type="number" min="1" id="amount" name="amount" class="form-control" placeholder="How much do you want to send?" value="<?php echo(htmlentities($transaction['amount'])); ?>" />
+        <input type="number" min="1" id="amount" name="amount" class="form-control" placeholder="How much do you want to send?" value="" required/>
       </div>
       <div class="form-group">
         <label for="title">Subject</label>
-        <input type="text" min="1" id="subject" name="subject" class="form-control" placeholder="Why are you sending money?" value="<?php echo(htmlentities($transaction['subject'])); ?>" />
+        <input type="text" min="1" id="subject" name="subject" class="form-control" placeholder="Why are you sending money?" value="" required/>
       </div>
       <div class="form-group">
         <label for="content">Message</label>
-        <textarea class="form-control" id="message" name="message" placeholder="Say thank you, or some other note." rows="12"><?php echo(htmlentities( (htmlentities($transaction['message'])) )); ?></textarea>
+        <textarea class="form-control" id="message" name="message" placeholder="Say thank you, or some other note." rows="12" required></textarea>
       </div>
       <div class="form-group">
         <label for="tags">From</label>
-        <input type="text" min="1" id="sender" name="sender" class="form-control" placeholder="Enter email from" value="<?php echo(htmlentities($transaction['sender'])); ?>" />
+        <input type="text" min="1" id="sender" name="sender" class="form-control" placeholder="Enter email from" value="" required/>
       </div>
       <div class="form-group">
         <label for="tags">To</label>
-        <input type="text" min="1" id="receiver" name="receiver" class="form-control" placeholder="Enter email to" value="<?php echo(htmlentities($transaction['receiver'])); ?>" />
+        <input type="text" min="1" id="receiver" name="receiver" class="form-control" placeholder="Enter email to" value="" required />
       </div>
       <div class="form-group">
         <div class="btn-toolbar align-middle">
@@ -92,12 +91,10 @@
           <button class="btn btn-secondary mr-1 d-flex justify-content-center align-content-between" onclick="get('/index')"><span class="material-icons">cancel</span>&nbsp;Cancel</button>
         </div>
       </div>
-      <input type="hidden" id="date" name="date" value="<?php echo(htmlentities($transaction['date'])); ?>" />
+      <input type="hidden" id="date" name="date" value="<?php echo(htmlentities(date('Y-m-d'))); ?>" />
     </form>
   </div>
 </div>
-
-    </div>
     </div>
     <footer class="footer">
       <div class="container">

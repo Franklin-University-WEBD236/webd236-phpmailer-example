@@ -20,19 +20,10 @@ function get_list() {
   );
 }
 function get_send() {
-  $transactions = adHocQuery();
-  $balance = 0;
-  if(!empty($transactions)){
-    foreach($transactions as $t){
-      $balance += $t['amount'];
-    }
-  }
   renderTemplate(
     "views/cache_transaction_add.php",
     array(
-      'title' => 'My Transactions',
-      'transactions' => $transactions,
-      'balance' => $balance
+      'title' => 'My Transactions'
     )
   );
 }

@@ -2,7 +2,7 @@
 include_once 'models/db.php';
 
 function findAllTransactions() {
-  return null;
+  return adHocQuery('SELECT * FROM transactions');
 }
 
 ?>
