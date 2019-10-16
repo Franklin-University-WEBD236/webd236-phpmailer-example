@@ -63,7 +63,7 @@ function get_view($id) {
     "views/cache_transaction_view.php",
     array(
       'title' => 'My Transactions',
-      'transactions' => $transactions
+      'transaction' => $transactions
     )
   );
 }

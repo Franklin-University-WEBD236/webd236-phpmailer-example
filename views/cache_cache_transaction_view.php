@@ -82,6 +82,7 @@
 
 <div class="row">
   <div class="col-lg-12">
+      <?php echo({ $transaction['message'] ); ?>}
   </div>
 </div>
     
