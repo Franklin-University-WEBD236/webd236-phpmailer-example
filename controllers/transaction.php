@@ -49,6 +49,7 @@ function post_send() {
         'transaction' => $transaction
       )
     );
+    redirect('../../index');
   } else {
     $transaction = array('amount' => $_POST['amount'], 'subject' => $_POST['subject'], 'message' => $_POST['message'], 'sender' => $_POST['sender'], 'receiver' => $_POST['receiver'], 'date' => date('Y-m-d'));
     renderTemplate(
