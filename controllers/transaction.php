@@ -20,9 +20,13 @@ function get_list() {
   );
 }
 function get_send() {
+  $transaction = array('amount' => '', 'subject' => '', 'message' => '', 'sender' => '', 'receiver' => '', 'date' => date('Y-m-d'));
+
   renderTemplate(
     "views/cache_transaction_add.php",
     array(
+      'operation' => 'send',
+      'transaction' => $transaction,
       'title' => 'My Transactions'
     )
   );
@@ -35,19 +39,26 @@ function post_send() {
   }
   if(empty($errors)) {
     inserTransaction($_POST['amount'], $_POST['subject'], $_POST['message'], $_POST['sender'], $_POST['receiver'], $_POST['date']);
+    $transaction = array('amount' => $_POST['amount'], 'subject' => $_POST['subject'], 'message' => $_POST['message'], 'sender' => $_POST['sender'], 'receiver' => $_POST['receiver'], 'date' => date('Y-m-d'));
 
     renderTemplate(
       "views/cache_transaction_add.php",
       array(
-        'title' => 'My Transactions'
+        'operation' => 'send',
+        'title' => 'My Transactions',
+        'transaction' => $transaction
       )
     );
   } else {
+    $transaction = array('amount' => $_POST['amount'], 'subject' => $_POST['subject'], 'message' => $_POST['message'], 'sender' => $_POST['sender'], 'receiver' => $_POST['receiver'], 'date' => date('Y-m-d'));
     renderTemplate(
       "views/cache_transaction_add.php",
       array(
+        'operation' => 'send',
         'title' => 'My Transactions',
-        'errors' => $errors
+        'errors' => $errors,
+        'transaction' => $transaction
+
       )
     );
   }
