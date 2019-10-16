@@ -4,6 +4,9 @@ include_once "models/transaction.php";
 
 function get_list() {
   $transactions = findAllTransactions();
+  echo "<pre>";
+  print_r($transactions);
+  echo "</pre>";
   $balance = 0;
   if(!empty($transactions)){
     foreach($transactions as $t){
@@ -28,9 +31,11 @@ function get_send() {
   );
 }
 function post_send() {
+  $transactions = findAllTransactions();
   echo "<pre>";
-  print_r($_POST);
+  print_r($transactions);
   echo "</pre>";
+
   
 
   $errors = array();
@@ -40,7 +45,7 @@ function post_send() {
     }
   }
   if(empty($errors)) {
-    inserTransaction($_POST['amount'], $_POST['subject'], $_POST['message'], $_POST['sender'], $_POST['receiver'], $_POST['date']);
+    echo inserTransaction($_POST['amount'], $_POST['subject'], $_POST['message'], $_POST['sender'], $_POST['receiver'], $_POST['date']);
 
     renderTemplate(
       "views/cache_transaction_add.php",

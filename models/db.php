@@ -15,7 +15,4 @@ function adHocQuery($q) {
     $st -> execute();
     return $st -> fetchAll(PDO::FETCH_ASSOC);
 }
-function getalltransaction() {
-  echo "Test";
-}
 ?>
