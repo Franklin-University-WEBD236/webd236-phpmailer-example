@@ -31,16 +31,32 @@ function post_send() {
   echo "<pre>";
   print_r($_POST);
   echo "</pre>";
+  
+
+  $errors = array();
   foreach ($_POST as $key => $value) {
-      $errors[] = array($key.' may not be empty');
+    if(empty($value)) {
+      $errors[] = $key.' may not be empty';
+    }
   }
-  renderTemplate(
-    "views/cache_transaction_add.php",
-    array(
-      'title' => 'My Transactions',
-      'errors' => $errors
-    )
-  );
+  if(empty($errors)) {
+    inserTransaction($_POST['amount'], $_POST['subject'], $_POST['message'], $_POST['sender'], $_POST['receiver'], $_POST['date']);
+
+    renderTemplate(
+      "views/cache_transaction_add.php",
+      array(
+        'title' => 'My Transactions'
+      )
+    );
+  } else {
+    renderTemplate(
+      "views/cache_transaction_add.php",
+      array(
+        'title' => 'My Transactions',
+        'errors' => $errors
+      )
+    );
+  }
 }
 
 ?>
