@@ -64,7 +64,7 @@
 
 <div class="row">
   <div class="col-lg-12">
-    <span class='h4'>Transactions</span> <span class='float-right h3'>Balance: $0.00</span></span>
+    <span class='h4'>Transactions</span> <span class='float-right h3'>Balance: $<?php echo($balance); ?></span></span>
 
     <?php  if (isset($transactions)): ?>
     <div class="row">
