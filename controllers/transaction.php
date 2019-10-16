@@ -4,9 +4,6 @@ include_once "models/transaction.php";
 
 function get_list() {
   $transactions = findAllTransactions();
-  echo "<pre>";
-  print_r($transactions);
-  echo "</pre>";
   $balance = 0;
   if(!empty($transactions)){
     foreach($transactions as $t){
@@ -55,5 +52,8 @@ function post_send() {
     );
   }
 }
-
+function get_delete($id) {
+  deleteTransaction($id);
+  redirect('@@index@@');
+}
 ?>

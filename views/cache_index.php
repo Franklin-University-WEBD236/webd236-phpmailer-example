@@ -65,15 +65,20 @@
 <div class="row">
   <div class="col-lg-12">
     <span class='h4'>Transactions</span> <span class='float-right h3'>Balance: $<?php echo($balance); ?></span></span>
-
     <?php  if (isset($transactions)): ?>
     <div class="row">
       <div class="col-lg-12">
-          <ul class="mb-0">
     <?php  foreach ($transactions as $transaction): ?>
-            <li><?php echo($transaction['id']); ?></li>
+        <div class="col-transaction">
+        <p><b>Price : </b> $<?php echo($transaction['amount']); ?> <b>Date : </b> <?php echo($transaction['date']); ?>
+          <br><b><?php echo($transaction['subject']); ?> : </b> <?php echo($transaction['message']); ?>
+          <br><b>From : </b> <?php echo($transaction['sender']); ?>
+          <b>To : </b> <?php echo($transaction['receiver']); ?></p>
+          <a href="/transaction/view/<?php echo($transaction['id']); ?>"><button class="btn btn-primary mr-1 d-flex justify-content-center align-content-between" ><span class="material-icons">add_circle_outline</span>&nbsp;View</button></a>
+          <a href="/transaction/delete/<?php echo($transaction['id']); ?>"><button class="btn btn-primary mr-1 d-flex justify-content-center align-content-between" ><span class="material-icons">add_circle_outline</span>&nbsp;Delete</button></a>
+
+        </div>
     <?php  endforeach; ?>
-          </ul>
       </div>
     </div>
     <?php  endif;?>
