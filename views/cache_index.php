@@ -71,7 +71,7 @@
       <div class="col-lg-12">
           <ul class="mb-0">
     <?php  foreach ($transactions as $transaction): ?>
-            <li><?php echo(htmlentities($transaction)); ?></li>
+            <li><?php echo($transaction['id']); ?></li>
     <?php  endforeach; ?>
           </ul>
       </div>

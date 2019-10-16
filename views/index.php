@@ -9,7 +9,7 @@
       <div class="col-lg-12">
           <ul class="mb-0">
     [[ foreach ($transactions as $transaction): ]]
-            <li>{{$transaction}}</li>
+            <li>{{{$transaction['id']}}}</li>
     [[ endforeach; ]]
           </ul>
       </div>
