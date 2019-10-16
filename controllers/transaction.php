@@ -54,6 +54,17 @@ function post_send() {
 }
 function get_delete($id) {
   deleteTransaction($id);
-  redirect('@@index@@');
+  redirect('../../index');
+}
+function get_view($id) {
+  $transactions = findTransactionsByID($id);
+  print_r($transactions);
+  renderTemplate(
+    "views/cache_transaction_view.php",
+    array(
+      'title' => 'My Transactions',
+      'transactions' => $transactions
+    )
+  );
 }
 ?>

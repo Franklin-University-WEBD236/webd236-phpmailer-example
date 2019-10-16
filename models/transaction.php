@@ -17,5 +17,8 @@ function deleteTransaction($id) {
     $st -> execute();
     return $st -> fetchAll(PDO::FETCH_ASSOC);
 }
+function findTransactionsByID($id) {
+  return adHocQuery("SELECT * FROM transactions WHERE id = $id");
+}
 
 ?>

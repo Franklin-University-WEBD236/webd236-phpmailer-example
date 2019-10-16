@@ -80,6 +80,8 @@ function renderTemplate($view, $params) {
       array('src' => '/}}}/', 'dst' => '); ?>'),
       array('src' => '/{{/', 'dst' => '<?php echo(htmlentities('),
       array('src' => '/}}/', 'dst' => ')); ?>'),
+      array('src' => '/{{{{/', 'dst' => '<?php echo(nl2br(htmlentities('),
+      array('src' => '/}}}}/', 'dst' => '))); ?>'),
       array('src' => '/\[\[/', 'dst' => '<?php '),
       array('src' => '/\]\]/', 'dst' => '?>')
     );
