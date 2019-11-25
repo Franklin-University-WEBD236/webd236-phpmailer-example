@@ -1,16 +1,15 @@
 <?php
-include_once 'include/PHPMailer/PHPMailer.php';
+include_once 'includes/PHPMailer/PHPMailer.php';
 
 //Import PHPMailer classes into the global namespace
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\SMTP;
 
 //Create a new PHPMailer instance
 $mail = new PHPMailer;
 //Tell PHPMailer to use SMTP
 $mail->isSMTP();
 //Set the hostname of the mail server
-$mail->Host = $_ENV["MAIL_HOST"]
+$mail->Host = $_ENV["MAIL_HOST"];
 // use
 // $mail->Host = gethostbyname('smtp.gmail.com');
 // if your network does not support SMTP over IPv6
@@ -27,11 +26,9 @@ $mail->Username = $_ENV["POSTMARK_API_TOKEN"];
 $mail->Password = $_ENV["POSTMARK_API_TOKEN"];
 
 //Set who the message is to be sent from
-$mail->setFrom('from@example.com', 'First Last');
-//Set an alternative reply-to address
-$mail->addReplyTo('replyto@example.com', 'First Last');
+$mail->setFrom('webd236@tylerwhitney.com', 'WEBD 236');
 //Set who the message is to be sent to
-$mail->addAddress('whoto@example.com', 'John Doe');
+$mail->addAddress('tyler.whitney@franklin.edu', 'Tyler Whitney');
 
 //Set the subject line
 $mail->Subject = 'PHPMailer Test';
