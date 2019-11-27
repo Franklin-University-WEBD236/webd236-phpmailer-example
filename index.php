@@ -37,8 +37,10 @@ $mail->Subject = 'PHPMailer Test';
 
 //Read an HTML message body from an external file, convert referenced images to embedded,
 //convert HTML into a basic plain-text alternative body
-$mail->msgHTML(file_get_contents('contents.txt'), __DIR__);
-
+$body = "Test message.";
+$mail->msgHTML($body);
+//$mail->msgHTML(file_get_contents('contents.txt'), __DIR__);
+  
 //Replace the plain text body with one created manually
 $mail->AltBody = 'This is a plain-text message body';
 
@@ -46,11 +48,11 @@ $mail->AltBody = 'This is a plain-text message body';
 //$mail->addAttachment('images/phpmailer_mini.png');
 
 //send the message, check for errors
-if (!$mail->send()) {
+/*if (!$mail->send()) {
     echo 'Mailer Error: '. $mail->ErrorInfo;
 } else {
     echo 'Message sent!';
-}
+}*/
 
 
 ?>
