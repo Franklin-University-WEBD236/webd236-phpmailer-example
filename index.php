@@ -10,7 +10,7 @@ use PHPMailer\PHPMailer\SMTP;
 $mail = new PHPMailer;
 //Tell PHPMailer to use SMTP
 $mail->isSMTP();
-//Set the hostname of the mail server
+//Set the hostname of the mail server - I get this from the .env file
 $mail->Host = getenv("MAIL_HOST");
 // use
 // $mail->Host = gethostbyname('smtp.gmail.com');
@@ -22,7 +22,7 @@ $mail->Port = 587;
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 //Whether to use SMTP authentication
 $mail->SMTPAuth = true;
-//Username to use for SMTP authentication
+//Username to use for SMTP authentication - I was using a Postmark account as a test SMTP server
 $mail->Username = getenv("POSTMARK_API_TOKEN");
 //Password to use for SMTP authentication
 $mail->Password = getenv("POSTMARK_API_TOKEN");
